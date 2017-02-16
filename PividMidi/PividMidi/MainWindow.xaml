@@ -4,13 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PividMidi"
+        xmlns:view="clr-namespace:PividMidi.View"
+
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <StackPanel Orientation="Horizontal" Margin="10">
-        <Slider Minimum="0" Maximum="127" Orientation="Vertical" Value="{Binding Test.Value}"  >
-            <Slider.LayoutTransform>
-                <ScaleTransform ScaleX="2"></ScaleTransform>
-            </Slider.LayoutTransform>
-        </Slider>
+        <view:APCMiniControllerView x:Name="ApcMiniControllerView" ></view:APCMiniControllerView>
     </StackPanel>
 </Window>

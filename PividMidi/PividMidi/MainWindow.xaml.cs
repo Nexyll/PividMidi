@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PividMidi.Model;
 using Sanford.Multimedia.Midi;
 using InputDevice = Sanford.Multimedia.Midi.InputDevice;
 
@@ -23,14 +24,14 @@ namespace PividMidi
     public partial class MainWindow : Window
     {
         private APCMiniController _apcMiniController;
-        public Fader Test { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
-            InputDevice id = new InputDevice(10);
-            _apcMiniController = new APCMiniController(id, new OutputDevice(0));
-            Test = _apcMiniController.Controls.First(x => x.Name == "Fader 1") as Fader;   
+            
+            InputDevice id = new InputDevice(0);
+            _apcMiniController = new APCMiniController(id, new OutputDevice(1));
+            ApcMiniControllerView.Bind(_apcMiniController);
         }
     }
 }

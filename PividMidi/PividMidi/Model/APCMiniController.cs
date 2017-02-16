@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Sanford.Multimedia.Midi;
 
-namespace PividMidi
+namespace PividMidi.Model
 {
-    class APCMiniController
+    public class APCMiniController
     {
         private InputDevice _inputDevice;
         private ChannelStopper _channelStopper;
@@ -24,14 +22,14 @@ namespace PividMidi
             _inputDevice.ChannelMessageReceived += InputDeviceOnChannelMessageReceived;
 
             Controls.Add(new Fader("Fader 1", 48));
-            Controls.Add(new Fader("Fader 1", 49));
-            Controls.Add(new Fader("Fader 1", 50));
-            Controls.Add(new Fader("Fader 1", 51));
-            Controls.Add(new Fader("Fader 1", 52));
-            Controls.Add(new Fader("Fader 1", 53));
-            Controls.Add(new Fader("Fader 1", 54));
-            Controls.Add(new Fader("Fader 1", 55));
-            Controls.Add(new Fader("Fader 1", 56));
+            Controls.Add(new Fader("Fader 2", 49));
+            Controls.Add(new Fader("Fader 3", 50));
+            Controls.Add(new Fader("Fader 4", 51));
+            Controls.Add(new Fader("Fader 5", 52));
+            Controls.Add(new Fader("Fader 6", 53));
+            Controls.Add(new Fader("Fader 7", 54));
+            Controls.Add(new Fader("Fader 8", 55));
+            Controls.Add(new Fader("Fader 9", 56));
 
 
             _inputDevice.StartRecording();

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="PividMidi.View.FaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" >
+    <StackPanel Orientation="Vertical" Margin="10">
+        <Slider Minimum="0" Maximum="127" Margin="4" Orientation="Vertical" HorizontalAlignment="Center" Value="{Binding Fader.Value}" Height="100" >
+            <Slider.LayoutTransform>
+                <ScaleTransform ScaleX="2"></ScaleTransform>
+            </Slider.LayoutTransform>
+        </Slider>
+        <Label Content="{Binding Fader.Name}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+    </StackPanel>
+</UserControl>

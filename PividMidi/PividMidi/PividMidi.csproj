@@ -68,11 +68,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="APCMiniControllerView.xaml">
+    <Page Include="View\APCMiniControllerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FaderView.xaml">
+    <Page Include="View\FaderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -80,17 +80,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="APCMiniController.cs" />
-    <Compile Include="APCMiniControllerView.xaml.cs">
+    <Compile Include="Model\APCMiniController.cs" />
+    <Compile Include="View\APCMiniControllerView.xaml.cs">
       <DependentUpon>APCMiniControllerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Control.cs" />
-    <Compile Include="Fader.cs" />
-    <Compile Include="FaderView.xaml.cs">
+    <Compile Include="Model\Control.cs" />
+    <Compile Include="Model\Fader.cs" />
+    <Compile Include="View\FaderView.xaml.cs">
       <DependentUpon>FaderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -126,6 +126,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
