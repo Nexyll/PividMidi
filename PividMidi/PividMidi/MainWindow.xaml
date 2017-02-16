@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Slider Minimum="0" Maximum="127" Value="{Binding Fader.Value}"></Slider>
     </Grid>
 </Window>

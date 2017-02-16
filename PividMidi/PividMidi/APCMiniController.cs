@@ -10,6 +10,7 @@ namespace PividMidi
     class APCMiniController
     {
         private InputDevice _inputDevice;
+        private ChannelStopper _channelStopper;
         private OutputDevice _outputDevice;
 
         public List<Control> Controls = new List<Control>();
@@ -18,8 +19,41 @@ namespace PividMidi
         {
             _inputDevice = inputDevice;
             _outputDevice = outputDevice;
+            _channelStopper = new ChannelStopper();
+
+            _inputDevice.ChannelMessageReceived += InputDeviceOnChannelMessageReceived;
+
+            Controls.Add(new Fader("Fader 1", 48));
+
+            _inputDevice.StartRecording();
 
         }
 
+        private void InputDeviceOnChannelMessageReceived(object sender, ChannelMessageEventArgs channelMessageEventArgs)
+        {
+            switch (channelMessageEventArgs.Message.Command)
+            {
+                case ChannelCommand.NoteOff:
+                    break;
+                case ChannelCommand.NoteOn:
+                    break;
+                case ChannelCommand.PolyPressure:
+                    break;
+                case ChannelCommand.Controller:
+                    Fader concernedFader =
+                        Controls.First(
+                                x => x.ChannelID == channelMessageEventArgs.Message.Data1 && x.Type == ControlType.Fader) as
+                            Fader;
+                    break;
+                case ChannelCommand.ProgramChange:
+                    break;
+                case ChannelCommand.ChannelPressure:
+                    break;
+                case ChannelCommand.PitchWheel:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
     }
 }
