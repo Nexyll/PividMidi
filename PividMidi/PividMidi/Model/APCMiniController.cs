@@ -52,6 +52,10 @@ namespace PividMidi.Model
                                 x => x.ChannelID == channelMessageEventArgs.Message.Data1 && x.Type == ControlType.Fader) as
                             Fader;
                     concernedFader.Value = channelMessageEventArgs.Message.Data2;
+
+                    ChannelMessage channelMessage = new ChannelMessage(channelMessageEventArgs.Message.Command, channelMessageEventArgs.Message.MidiChannel, channelMessageEventArgs.Message.Data1, channelMessageEventArgs.Message.Data2);
+                    _outputDevice.Send(channelMessage);
+
                     break;
                 case ChannelCommand.ProgramChange:
                     break;

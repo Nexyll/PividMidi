@@ -6,7 +6,35 @@
              xmlns:local="clr-namespace:PividMidi"
              xmlns:view="clr-namespace:PividMidi.View"
              mc:Ignorable="d">
-    <StackPanel Name="StackPanelFaders" Orientation="Horizontal">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0" Name="StackPanelButtons" Orientation="Horizontal">
+                <Label Content="Matrix buttons"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="0" Name="StackPanelRigttButtons" Orientation="Vertical">
+                <Label Content="Rights buttons"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.Row="1" Name="StackPanelBottomButtons" Orientation="Horizontal">
+                <Label Content="Bottom buttons"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Name="StackPanelShiftButton" Orientation="Horizontal">
+                <Label Content="Shift button"></Label>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="1" Name="StackPanelFaders" Orientation="Horizontal" >
 
-    </StackPanel>
+        </StackPanel>
+    </Grid>
 </UserControl>

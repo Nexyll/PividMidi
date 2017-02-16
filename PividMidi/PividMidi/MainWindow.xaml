@@ -7,8 +7,8 @@
         xmlns:view="clr-namespace:PividMidi.View"
 
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="650">
     <StackPanel Orientation="Horizontal" Margin="10">
-        <view:APCMiniControllerView x:Name="ApcMiniControllerView" ></view:APCMiniControllerView>
+            <view:APCMiniControllerView x:Name="ApcMiniControllerView" ></view:APCMiniControllerView>
     </StackPanel>
 </Window>
