@@ -24,6 +24,15 @@ namespace PividMidi
             _inputDevice.ChannelMessageReceived += InputDeviceOnChannelMessageReceived;
 
             Controls.Add(new Fader("Fader 1", 48));
+            Controls.Add(new Fader("Fader 1", 49));
+            Controls.Add(new Fader("Fader 1", 50));
+            Controls.Add(new Fader("Fader 1", 51));
+            Controls.Add(new Fader("Fader 1", 52));
+            Controls.Add(new Fader("Fader 1", 53));
+            Controls.Add(new Fader("Fader 1", 54));
+            Controls.Add(new Fader("Fader 1", 55));
+            Controls.Add(new Fader("Fader 1", 56));
+
 
             _inputDevice.StartRecording();
 
@@ -42,7 +51,7 @@ namespace PividMidi
                 case ChannelCommand.Controller:
                     Fader concernedFader =
                         Controls.First(
-                                x => x.ChannelID == 48 && x.Type == ControlType.Fader) as
+                                x => x.ChannelID == channelMessageEventArgs.Message.Data1 && x.Type == ControlType.Fader) as
                             Fader;
                     concernedFader.Value = channelMessageEventArgs.Message.Data2;
                     break;
