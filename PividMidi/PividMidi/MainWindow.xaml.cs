@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,17 @@ namespace PividMidi
             InputDevice id = new InputDevice(0);
             _apcMiniController = new APCMiniController(id, new OutputDevice(1));
             ApcMiniControllerView.Bind(_apcMiniController);
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            //Trouver qqch de plus propre
+            Process self = Process.GetCurrentProcess();
+            foreach (Process p in Process.GetProcesses().Where(p => p.Id == self.Id))
+            {
+                p.Kill();
+            }
+            base.OnClosed(e);
         }
     }
 }
