@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:PividMidi"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Slider Minimum="0" Maximum="127" Value="{Binding Fader.Value}"></Slider>
-    </Grid>
+    <StackPanel Orientation="Horizontal" Margin="10">
+        <Slider Minimum="0" Maximum="127" Orientation="Vertical" Value="{Binding Test.Value}"  >
+            <Slider.LayoutTransform>
+                <ScaleTransform ScaleX="2"></ScaleTransform>
+            </Slider.LayoutTransform>
+        </Slider>
+    </StackPanel>
 </Window>

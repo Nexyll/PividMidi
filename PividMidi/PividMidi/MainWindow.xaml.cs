@@ -30,8 +30,7 @@ namespace PividMidi
             DataContext = this;
             InputDevice id = new InputDevice(0);
             _apcMiniController = new APCMiniController(id, new OutputDevice(0));
-            Test = _apcMiniController.Controls.First(x => x.Name == "Fader 1") as Fader;
-            
+            Test = _apcMiniController.Controls.First(x => x.Name == "Fader 1") as Fader;   
         }
     }
 }

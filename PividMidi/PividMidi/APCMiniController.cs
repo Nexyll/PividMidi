@@ -42,8 +42,9 @@ namespace PividMidi
                 case ChannelCommand.Controller:
                     Fader concernedFader =
                         Controls.First(
-                                x => x.ChannelID == channelMessageEventArgs.Message.Data1 && x.Type == ControlType.Fader) as
+                                x => x.ChannelID == 48 && x.Type == ControlType.Fader) as
                             Fader;
+                    concernedFader.Value = channelMessageEventArgs.Message.Data2;
                     break;
                 case ChannelCommand.ProgramChange:
                     break;
