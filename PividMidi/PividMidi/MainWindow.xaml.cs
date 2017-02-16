@@ -31,7 +31,7 @@ namespace PividMidi
             DataContext = this;
             
             InputDevice id = new InputDevice(0);
-            _apcMiniController = new APCMiniController(id, new OutputDevice(1));
+            _apcMiniController = new APCMiniController(id, new OutputDevice(2));
             ApcMiniControllerView.Bind(_apcMiniController);
         }
 

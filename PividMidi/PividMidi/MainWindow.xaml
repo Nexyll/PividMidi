@@ -9,6 +9,6 @@
         mc:Ignorable="d"
         Title="MainWindow">
     <StackPanel Orientation="Horizontal" Margin="10">
-        <view:APCMiniControllerView x:Name="ApcMiniControllerView" ></view:APCMiniControllerView>
+            <view:APCMiniControllerView x:Name="ApcMiniControllerView" ></view:APCMiniControllerView>
     </StackPanel>
 </Window>
