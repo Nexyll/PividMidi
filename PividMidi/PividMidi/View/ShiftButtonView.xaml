@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="PividMidi.View.ShiftButtonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PividMidi.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ValueToBrushConverterShift x:Key="ValueToBrushConverterShift" />
+    </UserControl.Resources>
+    <StackPanel Margin="10">
+        <Button Width="40" Height="40">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="7" BorderThickness="2" BorderBrush="White" Background="{Binding Path=ShiftButton.Value, Converter={StaticResource ValueToBrushConverterShift}}"></Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="{Binding ShiftButton.Name}" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+    </StackPanel>
+</UserControl>

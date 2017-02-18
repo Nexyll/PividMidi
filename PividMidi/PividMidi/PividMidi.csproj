@@ -68,7 +68,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\BottomButtonView.xaml.cs">
+      <DependentUpon>BottomButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MatrixButtonView.xaml.cs">
+      <DependentUpon>MatrixButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RightButtonView.xaml.cs">
+      <DependentUpon>RightButtonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShiftButtonView.xaml.cs">
+      <DependentUpon>ShiftButtonView.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\APCMiniControllerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BottomButtonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,6 +97,11 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Model\APCMiniController.cs" />
+    <Compile Include="Model\BottomButton.cs" />
+    <Compile Include="Model\Button.cs" />
+    <Compile Include="Model\MatrixButton.cs" />
+    <Compile Include="Model\RightButton.cs" />
+    <Compile Include="Model\ShiftButton.cs" />
     <Compile Include="View\APCMiniControllerView.xaml.cs">
       <DependentUpon>APCMiniControllerView.xaml</DependentUpon>
     </Compile>
@@ -97,6 +118,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\MatrixButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RightButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShiftButtonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

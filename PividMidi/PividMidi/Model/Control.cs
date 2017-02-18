@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace PividMidi.Model
@@ -26,7 +27,7 @@ namespace PividMidi.Model
         public int Value
         {
             get { return _value; }
-            set { _value = value; OnPropertyChanged(); }
+            set { _value = value; OnPropertyChanged(); Console.WriteLine(_value);}
         }
 
         /// <summary>
@@ -45,7 +46,10 @@ namespace PividMidi.Model
     public enum ControlType
     {
         Fader,
-        Button
+        MatrixButton,
+        BottomButton,
+        RightButton,
+        ShiftButton
     }
 }
 

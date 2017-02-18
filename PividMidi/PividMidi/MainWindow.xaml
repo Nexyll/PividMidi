@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PividMidi"
         xmlns:view="clr-namespace:PividMidi.View"
-
+        Width="800" Height="800"
         mc:Ignorable="d"
         Title="MainWindow">
+    
     <StackPanel Orientation="Horizontal" Margin="10">
             <view:APCMiniControllerView x:Name="ApcMiniControllerView" ></view:APCMiniControllerView>
     </StackPanel>

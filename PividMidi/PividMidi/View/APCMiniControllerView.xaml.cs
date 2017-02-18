@@ -26,9 +26,29 @@ namespace PividMidi.View
         {
             foreach (Control control in APCMiniController.Controls)
             {
-                if (control.Type == ControlType.Fader)
+                switch (control.Type)
                 {
-                    StackPanelFaders.Children.Add(new FaderView(control as Fader));
+                    case ControlType.Fader:
+                        StackPanelFaders.Children.Add(new FaderView(control as Fader));
+                        break;
+                    case ControlType.MatrixButton:
+                        
+                        MatrixButtonView button = new MatrixButtonView(control as MatrixButton);
+                        
+                        GridMatrixButtons.Children.Add(button);
+                        Grid.SetColumn(button, control.ChannelID%8);
+                        Grid.SetRow(button, 7-(control.ChannelID/8));
+                        
+                        break;
+                    case ControlType.BottomButton:
+                        StackPanelBottomButtons.Children.Add(new BottomButtonView(control as BottomButton));
+                        break;
+                    case ControlType.RightButton:
+                        StackPanelRigttButtons.Children.Add(new RightButtonView(control as RightButton));
+                        break;
+                    case ControlType.ShiftButton:
+                        StackPanelShiftButton.Children.Add(new ShiftButtonView(control as ShiftButton));
+                        break;
                 }
             }
         }
