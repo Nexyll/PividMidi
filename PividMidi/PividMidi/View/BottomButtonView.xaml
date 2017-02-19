@@ -11,7 +11,7 @@
         <local:ValueToBrushConverterBottom x:Key="ValueToBrushConverterBottom" />
     </UserControl.Resources>
     <StackPanel Margin="10">
-        <Button Width="35" Height="35" Margin="15,0,10,0">
+        <Button Name="ButtonBottomButton" Width="35" Height="35" Margin="15,0,10,0" PreviewMouseLeftButtonDown="ButtonBottomButton_OnPreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="ButtonBottomButton_OnPreviewMouseLeftButtonUp">
                 <Button.Template>
                     <ControlTemplate>
                     <Border CornerRadius="25" BorderThickness="2" BorderBrush="White" Background="{Binding Path=BottomButton.Value, Converter={StaticResource ValueToBrushConverterBottom}}"></Border>

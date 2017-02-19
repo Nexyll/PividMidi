@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Margin="10,10,10,5">
-            <Button Width="35" Height="35">
+            <Button Name="ButtonRightButton" Width="35" Height="35" PreviewMouseLeftButtonUp="ButtonRightButton_OnPreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="ButtonRightButton_OnPreviewMouseLeftButtonDown">
                 <Button.Template>
                     <ControlTemplate>
                         <Border CornerRadius="25" BorderThickness="2" BorderBrush="White" Background="{Binding Path=RightButton.Value, Converter={StaticResource ValueToBrushConverterRight}}"></Border>

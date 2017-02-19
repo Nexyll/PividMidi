@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 using System.Windows.Media;
 using PividMidi.Model;
 
@@ -21,6 +22,16 @@ namespace PividMidi.View
             MatrixButton = matrixButton;
             
         }
+
+        private void ButtonMatrixButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MatrixButton.Value = 127;
+        }
+
+        private void ButtonMatrixButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MatrixButton.Value = 0;    
+        }
     }
 
     public class ValueToBrushConverterMatrix : IValueConverter
@@ -31,7 +42,7 @@ namespace PividMidi.View
 
             if (_value == 127)
             {
-                return Brushes.Orange;
+                return Brushes.DarkOrange;
             }
             return Brushes.Gray;
         }

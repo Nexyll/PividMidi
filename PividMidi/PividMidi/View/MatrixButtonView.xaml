@@ -10,7 +10,7 @@
         <local:ValueToBrushConverterMatrix x:Key="ValueToBrushConverterMatrix" />
     </UserControl.Resources>
     <StackPanel Margin="10">
-        <Button Width="60" Height="30">
+        <Button Name="ButtonMatrixButton" Width="60" Height="30" PreviewMouseLeftButtonUp="ButtonMatrixButton_OnPreviewMouseLeftButtonUp" PreviewMouseLeftButtonDown="ButtonMatrixButton_OnPreviewMouseLeftButtonDown">
             <Button.Template>
                 <ControlTemplate>
                     <Border CornerRadius="7" BorderThickness="2" BorderBrush="White" Background="{Binding Path=MatrixButton.Value, Converter={StaticResource ValueToBrushConverterMatrix}}"></Border>

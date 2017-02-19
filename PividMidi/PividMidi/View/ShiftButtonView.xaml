@@ -10,7 +10,7 @@
         <local:ValueToBrushConverterShift x:Key="ValueToBrushConverterShift" />
     </UserControl.Resources>
     <StackPanel Margin="10">
-        <Button Width="40" Height="40">
+        <Button Name ="ButtonShiftButton" Width="40" Height="40" PreviewMouseLeftButtonDown="ButtonShiftButton_OnPreviewMouseLeftButtonDown"  PreviewMouseLeftButtonUp="ButtonShiftButton_OnPreviewMouseLeftButtonUp">
             <Button.Template>
                 <ControlTemplate>
                     <Border CornerRadius="7" BorderThickness="2" BorderBrush="White" Background="{Binding Path=ShiftButton.Value, Converter={StaticResource ValueToBrushConverterShift}}"></Border>

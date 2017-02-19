@@ -30,6 +30,16 @@ namespace PividMidi.View
             DataContext = this;
             RightButton = rightButton;
         }
+
+        private void ButtonRightButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            RightButton.Value = 127;
+        }
+
+        private void ButtonRightButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            RightButton.Value = 0;
+        }
     }
 
     public class ValueToBrushConverterRight : IValueConverter
@@ -40,7 +50,7 @@ namespace PividMidi.View
 
             if (_value == 127)
             {
-                return Brushes.Green;
+                return Brushes.LawnGreen;
             }
             return Brushes.Gray;
         }

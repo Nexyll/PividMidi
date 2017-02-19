@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Sanford.Multimedia.Midi;
 
 namespace PividMidi.Model
 {
@@ -27,13 +28,28 @@ namespace PividMidi.Model
         public int Value
         {
             get { return _value; }
-            set { _value = value; OnPropertyChanged(); Console.WriteLine(_value);}
+            set
+            {
+
+                _value = value;
+                OnPropertyChanged();
+                if (Type == ControlType.BottomButton || Type == ControlType.MatrixButton || Type == ControlType.RightButton)
+                {
+
+                        ApcMiniController.setLed(ChannelID, _value);
+
+
+                }
+                ApcMiniController.sendMidi(this);
+            }
         }
 
         /// <summary>
         /// Représente en les note ON et OFF des messages midi
         /// </summary>
         public bool State { get; set; }
+
+        public APCMiniController ApcMiniController { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

@@ -29,6 +29,17 @@ namespace PividMidi.View
             DataContext = this;
             ShiftButton = shiftButton;
         }
+
+        private void ButtonShiftButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ShiftButton.Value = 127;
+
+        }
+
+        private void ButtonShiftButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ShiftButton.Value = 0;
+        }
     }
 
     public class ValueToBrushConverterShift : IValueConverter
@@ -39,7 +50,7 @@ namespace PividMidi.View
 
             if (_value == 127)
             {
-                return Brushes.BlueViolet;
+                return Brushes.DarkGray;
             }
             return Brushes.Gray;
         }

@@ -29,6 +29,16 @@ namespace PividMidi.View
             DataContext = this;
             BottomButton = bottomButton;
         }
+
+        private void ButtonBottomButton_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            BottomButton.Value = 127;
+        }
+
+        private void ButtonBottomButton_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            BottomButton.Value = 0;
+        }
     }
 
     public class ValueToBrushConverterBottom : IValueConverter
